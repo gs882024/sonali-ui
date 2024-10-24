@@ -1,18 +1,17 @@
 export class MasterService {
 
-  //let BASE_URL = 'http://localhost:9090/sonali/api/v1/master/';
-  //static BASE_URL = 'http://65.2.35.202:9090/sonali/api/v1/master/';
-
   BASE_URL = () => {
+    //return 'http://localhost:9090/sonali/api/v1/master/';
     return 'http://65.2.35.202:9090/sonali/api/v1/master/';
   };
 
     getDistinctBrand() {
         return fetch(this.BASE_URL + 'brands', {
           method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          }
+          headers: { 
+            'Access-Control-Allow-Origin' : '*',
+            'Content-Type': 'application/json'
+          },
         })
         .then(response => response.json())
     }
@@ -20,9 +19,10 @@ export class MasterService {
     getDistinctCategories() {
         return fetch(this.BASE_URL + 'categories', {
           method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          }
+          headers: { 
+            'Access-Control-Allow-Origin' : '*',
+            'Content-Type': 'application/json'
+          },
         })
         .then(response => response.json())
     }
@@ -30,9 +30,10 @@ export class MasterService {
     getDistinctSizes() {
         return fetch(this.BASE_URL + 'sizes', {
           method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          }
+          headers: { 
+            'Access-Control-Allow-Origin' : '*',
+            'Content-Type': 'application/json'
+          },
         })
         .then(response => response.json())
     }
