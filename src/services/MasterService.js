@@ -1,7 +1,6 @@
 export class MasterService {
 
   BASE_URL = () => {
-    //return 'http://localhost:9090/sonali/api/v1/master/';
     return 'http://65.2.35.202:9090/sonali/api/v1/master/';
   };
 

@@ -1,7 +1,6 @@
 export class ReportService {
   
   BASE_URL = () => {
-    //return 'http://localhost:9090/sonali/api/v1/reports/';
     return 'http://65.2.35.202:9090/sonali/api/v1/reports/';
   };
 
