@@ -1,0 +1,111 @@
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: normal;
+  background: var(--surface-ground);
+  color: var(--text-color);
+  padding: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+  background: var(--surface-card);
+  border-radius: 0px;
+  margin-bottom: 1rem;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.formgrid.grid {
+  margin-top: 0;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -.5rem;
+  margin-left: -.5rem;
+  margin-top: -.5rem;
+}
+
+.field.grid .col, .field.grid .col-1, .field.grid .col-10, .field.grid .col-11, .field.grid .col-12, .field.grid .col-2, .field.grid .col-3, .field.grid .col-4, .field.grid .col-5, .field.grid .col-6, .field.grid .col-7, .field.grid .col-8, .field.grid .col-9, .field.grid .col-fixed, .formgrid.grid .col, .formgrid.grid .col-1, .formgrid.grid .col-10, .formgrid.grid .col-11, .formgrid.grid .col-12, .formgrid.grid .col-2, .formgrid.grid .col-3, .formgrid.grid .col-4, .formgrid.grid .col-5, .formgrid.grid .col-6, .formgrid.grid .col-7, .formgrid.grid .col-8, .formgrid.grid .col-9, .formgrid.grid .col-fixed {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.grid>.col, .grid>[class*=col] {
+  box-sizing: border-box;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .md\:col-4, .md\:col-5 {
+      flex: 0 0 auto;
+      padding: .5rem;
+  }
+}
+
+.p-datatable {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.p-button{
+  border-radius: 0px;
+}
+
+.p-menubar{
+  background: none;
+}
+
+.card-padding{
+  padding-top: 1rem !important;
+}
