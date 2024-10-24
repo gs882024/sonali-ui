@@ -20,7 +20,10 @@ function Navbar() {
         },
         {
             label: 'Sales',
-            icon: 'pi pi-star'
+            icon: 'pi pi-star',
+            command: () => {
+                navigate('/sales-entry');
+            }
         },
         {
             label: 'Reports',

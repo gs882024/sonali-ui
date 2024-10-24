@@ -7,8 +7,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import StockReport from './modules/reports/stock-report';
 import SalesReport from './modules/reports/sales-report';
 import Dashboard from './modules/dashboard';
-import Sales from './modules/sales/sales';
 import Navbar from './components/navbar';
+
+import PurchaseEntry from './modules/purchase/purchase-entry';
+import SalesEntry from './modules/sales/sales-entry';
 
 function App() {
   return (
@@ -16,9 +18,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route index element={<Dashboard />} />
+        <Route path="purchase-entry" element={<PurchaseEntry />} />
+        <Route path="sales-entry" element={<SalesEntry />} />
         <Route path="stock-report" element={<StockReport />} />
         <Route path="sales-report" element={<SalesReport />} />
-        <Route path="sales" element={<Sales />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,13 +1,9 @@
 import React from "react";
-
 import { Panel } from 'primereact/panel';
 
-
-function Sales() {
-    <h1>Welcome to Sales</h1>
-
+export default function SalesEntry() {
     return (
-        <Panel header="Header">
+        <Panel header="Sales Entry">
             <p className="m-0">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -17,5 +13,3 @@ function Sales() {
         </Panel>
     )  
 }
-
-export default Sales;
