@@ -1,14 +1,13 @@
 export class ReportService {
-  
-  BASE_URL = () => {
-    return 'http://65.2.35.202:9090/sonali/api/v1/reports/';
-  };
+
+  static BASE_URL = 'http://65.2.35.202:9090/sonali/api/v1/reports/';
+
 
   getStockReport(pCode, pName, selectedBrand, selectedCategory, selectedSize) {
     const requestOptions = {
       method: 'POST',
-      headers: { 
-        'Access-Control-Allow-Origin' : '*',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -22,15 +21,15 @@ export class ReportService {
 
     console.log(requestOptions);
 
-    return fetch(this.BASE_URL + 'stock-report', requestOptions)
+    return fetch(ReportService.BASE_URL + 'stock-report', requestOptions)
       .then(response => response.json());
   }
 
   getSalesReport(fromDate, toDate, pName, selectedBrand, selectedCategory) {
     const requestOptions = {
       method: 'POST',
-      headers: { 
-        'Access-Control-Allow-Origin' : '*',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -44,7 +43,7 @@ export class ReportService {
 
     console.log(requestOptions);
 
-    return fetch(this.BASE_URL + 'sales-report', requestOptions)
+    return fetch(ReportService.BASE_URL + 'sales-report', requestOptions)
       .then(response => response.json());
   }
 }
