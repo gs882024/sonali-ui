@@ -1,6 +1,6 @@
 export class MasterService {
 
-  static BASE_URL = 'http://65.2.35.202:9090/sonali/api/v1/master/';
+  static BASE_URL = 'http://3.108.234.164:9090/sonali/api/v1/master/';
   //static BASE_URL = 'http://localhost:9090/sonali/api/v1/master/';
 
     getDistinctBrand() {
