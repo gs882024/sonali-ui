@@ -101,7 +101,7 @@ export default function SalesReport() {
     );
 
     return (
-        <div className='report-margin'>
+        <div>
             <Card title="Sales Report">
 
                 <div>

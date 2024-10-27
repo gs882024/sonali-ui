@@ -1,6 +1,7 @@
 export class MasterService {
 
   static BASE_URL = 'http://65.2.35.202:9090/sonali/api/v1/master/';
+  //static BASE_URL = 'http://localhost:9090/sonali/api/v1/master/';
 
     getDistinctBrand() {
         return fetch(MasterService.BASE_URL + 'brands', {
@@ -34,4 +35,15 @@ export class MasterService {
         })
         .then(response => response.json())
     }
+
+    getSuppliers() {
+      return fetch(MasterService.BASE_URL + 'suppliers', {
+        method: 'GET',
+        headers: { 
+          'Access-Control-Allow-Origin' : '*',
+          'Content-Type': 'application/json'
+        },
+      })
+      .then(response => response.json())
+  }
 }

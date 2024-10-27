@@ -20,23 +20,29 @@ export default function StockReport() {
     const [brandsSelectItems, setBrands] = useState([]);
     const [categoriesSelectItems, setCategories] = useState([]);
     const [sizesSelectItems, setSizes] = useState([]);
+    const ofsSelectItems = [
+        { label: 'Yes', value: true },
+        { label: 'No', value: false }
+    ];
 
     const [pCode, setPCode] = useState('');
     const [pName, setPName] = useState('');
     const [selectedBrand, setSelectedBrand] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedSize, setSelectedSize] = useState('');
+    const [selectedOFS, setSelectedOFS] = useState('');
 
     useEffect(() => {
         const masterService = new MasterService();
         masterService.getDistinctBrand().then(data => setBrands(data));
         masterService.getDistinctCategories().then(data => setCategories(data));
         masterService.getDistinctSizes().then(data => setSizes(data));
+        setSelectedOFS(false);
     }, []);
 
     const loadStockReport = async () => {
         const reportService = new ReportService();
-        reportService.getStockReport(pCode, pName, selectedBrand, selectedCategory, selectedSize).then(data => setStockReport(data));
+        reportService.getStockReport(pCode, pName, selectedBrand, selectedCategory, selectedSize, selectedOFS).then(data => setStockReport(data));
     }
 
     const onBrandChange = (e) => {
@@ -49,6 +55,10 @@ export default function StockReport() {
 
     const onSizeChange = (e) => {
         setSelectedSize(e.value);
+    }
+
+    const onOFSChange = (e) => {
+        setSelectedOFS(e.value);
     }
 
     const formatCurrency = (e) => {
@@ -64,7 +74,7 @@ export default function StockReport() {
     }
 
     return (
-        <div className='report-margin'>
+        <div>
             <Card title="Stock Report">
 
                 <div>
@@ -100,6 +110,11 @@ export default function StockReport() {
                                 <span id="expiry" className="p-calendar p-component p-inputwrapper">
                                     <Calendar dateFormat="dd/mm/yy" yearNavigator yearRange="2010:2030" />
                                 </span>
+                            </div>
+
+                            <div className="field col-6 md:col-4">
+                                <label htmlFor="ofs">Out of Stock</label>
+                                <Dropdown id="ofs" value={selectedOFS} options={ofsSelectItems} onChange={onOFSChange} optionLabel="label" editable="true" placeholder="Select Size" />
                             </div>
                         </div>
 

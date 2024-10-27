@@ -1,9 +1,11 @@
 export class ReportService {
 
   static BASE_URL = 'http://65.2.35.202:9090/sonali/api/v1/reports/';
+  //static BASE_URL = 'http://localhost:9090/sonali/api/v1/reports/';
 
 
-  getStockReport(pCode, pName, selectedBrand, selectedCategory, selectedSize) {
+
+  getStockReport(pCode, pName, selectedBrand, selectedCategory, selectedSize, selectedOFS) {
     const requestOptions = {
       method: 'POST',
       headers: {
@@ -15,7 +17,8 @@ export class ReportService {
         'productName': pName,
         'category': selectedCategory,
         'size': selectedSize,
-        'brand': selectedBrand
+        'brand': selectedBrand,
+        'isOfsFlag': selectedOFS
       })
     };
 
